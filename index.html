@@ -1,10 +1,91 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8" />
-		<title></title>
-	</head>
-	<body>
-		
-	</body>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .box>section {
+            width: 300px;
+            height: 400px;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <section>
+            <table border="1" cellspacing='0'>
+                <thead>
+                    <tr>
+                        <td>姓名</td>
+                    </tr>
+                </thead>
+                <tbody class="nameList"></tbody>
+            </table>
+        </section>
+        <section class="infoList"></section>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script>
+        $(function () {
+            const ary = [
+                { id: 1, name: '例三', year: 12, edu: '初中' },
+                { id: 2, name: '张力', year: 16, edu: '高中' },
+                { id: 3, name: '唐欣', year: 20, edu: '大学' },
+                { id: 4, name: '王恒', year: 30, edu: '本科' }];
+
+            let nameList = $('.nameList'); //填充姓名栏信息
+            let infoList = $('.infoList');//详情展示
+            let nameStr = '';
+            for (let item of ary) {
+                nameStr += `<tr>
+                         <td id=${item.id}>${item.name}</td>
+                        </tr>`
+            }
+            nameList.html(nameStr)
+            //添加冒泡事件 鼠标移入展示详情
+            nameList.on('mouseover', function (e) {
+                let id = e.target.id
+                for (let item of ary) {
+                    if (item.id == id) {
+                        infoList.html(`
+                            <table border="1" cellspacing='0'>
+                                <thead>
+                                    <tr>
+                                        <td>年龄</td>
+                                        <td>学历</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>${item.year}</td>
+                                        <td>${item.edu}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        `)
+                    }
+                }
+            })
+            //移出事件
+            nameList.on('mouseout', function(){
+                console.log(111)
+                infoList.html('');
+            })
+        })
+
+
+    </script>
+</body>
+
 </html>
