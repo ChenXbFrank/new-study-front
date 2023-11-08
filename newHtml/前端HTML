@@ -1,0 +1,249 @@
+https://blog.csdn.net/m0_52861000/article/details/128114305
+1.前端包含什么？
+结构：HTML（Hyper Text Markup Language--超文本标记语言）
+页面原始和内容 
+
+表现：CSS
+网页原始的外观和位置等页面样式（如颜色、大小等） 
+
+行为：JavaScript
+网页模型的定义与交互，简称JS
+
+2.编写的代码加载出来的原理？
+    代码变成可视化的网页就是由浏览器去渲染和加载的。也就是说有浏览器就可以运行以html后缀的代码了
+
+3、编译器
+vscode webstorm
+
+4.HTML标签两大类型？ 
+双标签：需要包裹住代码使用的标签，有一对，开头标签和结尾标签很像，结尾标签前多了一个/
+
+单标签：通常是不需要包裹的代码使用的，例如换行使用的<br>,水平线使用的<hr>
+
+5.HTML标签关系？ 
+    1.父子关系（嵌套关系）
+    <head>
+
+            <title> </title>
+
+    </head>
+
+    2.兄弟关系（并列关系） 
+    <head> </head>
+    <body> <body>
+
+
+
+1.注释 (<!--  -->)
+    说明：方便他人阅读。快捷键：Ctrl+/ 
+<!--  -->
+
+2.标题标签 (h)
+    <h1>今天天气真好</h1>
+	<h2>今天天气真好</h2>
+	<h3>今天天气真好</h3>
+	<h4>今天天气真好</h4>
+	<h5>今天天气真好</h5>
+	<h6>今天天气真好</h6>
+
+3.段落标签 (p)
+    说明：一段文字的段落需要用到这个。独占一行
+
+4.换行标签 （br）
+    说明：在需要换行的文字后面加上这个标签就可以实现了换行效果 
+
+5.水平线标签 （hr）
+    说明：在需要添加水平分割线的位置后面添加上这个标签就可以实现添加一条水平分割线的效果 
+
+6.文本格式化标签（加粗、下划线、倾斜、删除线） 
+    说明：两个显示效果都一样，区别就是下面完整单词的那个强调了重要性，是给其他程序员阅读代码时候看的。
+    <b> 加粗</b>  
+	<strong>加粗 </strong>
+ 
+	<u>下划线 </u>
+	<ins>下划线</ins>
+	
+	<i> 倾斜</i> 
+	<em>倾斜</em>
+	
+	<s>删除线 </s>
+	<del>删除线</del>
+
+7.媒体标签之图片标签 (img src=)
+    说明：src内容是图片的相对路径
+    alt内容是文字，当图片加载不出来时候显示的文字
+    title内容是文字，把鼠标放到图片上面显示的文字
+    idth和height内容是图片的宽和高，只设置其中一个，另一个会对比缩放，两个都设置有可能会图片扭曲
+    <img src="./图片.jpg" alt="加载不出来" title="鼠标放这里提示" width="" height="">
+
+8.相对路径
+ 说明：相对路径是一定可以找到的，就了解一下就好了，绝对路径这里要好好学习，根据图片和html文件所在位置的不同去选择不同的方式去寻找图片
+ 当前文件代码同级别目录    <img src="图片.jpg" alt="">
+ 当前文件代码下级目录   <img src="下级包名/图片.jpg" alt="">
+ 当前文件代码上级目录   <img src="../上级包名/图片.jpg" alt=""> 
+
+ 9.媒体标签之音频标签(audio src=)
+  说明：src：里面/文件夹/可以直接找到音频。controls显示播放的控件： autoplay：自动播放 loop：循环播放
+  <audio src=" /文件夹/音乐.mp3" controls autoplay loop></audio>
+
+10.媒体标签之视频标签(video src=)
+    说明： src：里面/文件夹/可以直接找到音频。controls显示播放的控件： autoplay  muted：自动静音播放 loop：循环播放
+    ps：这个使用和音频差不多，自动静音播放谷歌浏览器支持，其他浏览器可能不支持
+    <video src="/文件夹/视频.mp4" controls autoplay muted loop></video></body>
+
+11.超链接标签(a href=)
+    覆盖本页面跳转
+    <a href="https://www.baidu.com/">点我啊</a>
+    不覆盖本页面跳转
+     <a href="https://www.baidu.com/" target="_blank">点我啊</a>
+    说明：href内容是要跳转到的目标网站，标签之间夹着的就是点击内容，点击后跳转 
+
+    ps：跳转到的目标网址可以是网址也可以是本地的
+
+
+12.无序列表标签(ul-->li)
+    说明： ul标签中只能放li标签。li标签可以放其他标签
+    <ul>
+	 <li>香蕉</li>
+	 <li>牛奶</li>
+	</ul>
+
+13.有序列表标签(ol-->li)
+    说明：  ol标签中只能放li标签。li标签可以放其他标签。列表的每一项默认显示序号标识
+    <ol>
+	 <li>香蕉</li>
+	 <li>牛奶</li>
+	</ol>
+
+14.自定义标签(dl-->dt-->dd)
+    说明：dl标签中只能放dt主题标签和dd内容标签。dt和dd标签可以放任意标签。并且dd标签默认显示缩进
+    <dl>
+        <dt>主题</dt>
+            
+        <dd>香蕉</dd>
+            
+        <dd>牛奶</dd>	
+    </dl>
+
+15.表格标签（table-->tr-->td）
+    说明：没有看见表格是没有加显示表格的语句，表格的属性设置建议用css设置，后面会讲到。
+    table是表格大标签，tr是行标签，td是内容标签
+    <table>
+	    <tr>
+            <td>男生</td>
+            <td>女生</td>
+        </tr>
+        <tr>
+            <td>新手</td>
+            <td>老手</td>
+        </tr>
+	</table>
+
+ 16.表头标题和表头单元格标签  table-->tr(th、td)。caption是表格标题
+    说明： 没有看见表格是没有加显示表格的语句，表格的属性设置建议用css设置，后面会讲到。
+    table是表格大标签，caption是标题标签，tr是行标签，th是表头加粗标签，td是内容标签
+    <table>
+	 <caption>成绩单</caption>
+        <tr>
+            <th>男生</th>
+            <th>女生</th>
+        </tr>
+	    <tr>
+            <td>新手</td>
+            <td>老手</td>
+        </tr>
+	</table>
+
+17.合并单元格(caption--->tr---td)
+    说明:要合并哪里就把多余的标签和数据删除，然后在要合并的标签当中添加行（rowspan）或者列(colspan)合并，
+    数字是合并几行或者几列的意思 。注意：只能合并同一个结构的，不同结构的不能合并
+    <!-- table嵌套包含tr。tr嵌套包含th、td 。caption是表格标题在table内,跨行是rowspan,跨列是colspan-->
+    <table>
+        <caption>成绩单</caption>
+        <tr>
+            <th>男生</th>
+            <th>女生</th>
+        </tr>
+        <tr>
+            <td colspan="2">老手</td>
+        </tr>
+    </table>
+
+18.表单之按钮大全(input type=)
+    说明：这些多用于登录注册菜单时候用到 
+    	<!-- 表单域标签，用来控制整个表单为一体的，主要是提交和重置按钮 -->
+	<form action=""></form>
+	<!-- 1.写什么就显示什么 -->
+	文本框：<input type="text">
+	<br>
+	<!-- 2.输入的内容都会变成点点显示 -->
+	密码框：<input type="password">
+	<br>
+	<!-- 3.用于多选一，nanme设置相同名称就只能多选一 -->
+	单选框：男<input type="radio" name="sex" > 女<input type="radio" name="sex" >
+	<br>
+	<!-- 4.用于多选多 -->
+	多选框：<input type="checkbox" >
+	<br>
+	<!--5.提前默认选项 checked可以  -->
+	单选框：男<input type="radio" name="sex" > 女<input type="radio" name="sex" checked>
+	<br>
+	<!-- 6.文件选择，用于上传文件 -->
+	文件上传：<input type="file">
+	<br>
+	<!-- 7.文件选择，multiple用于上传多个文件 -->
+	多个文件上传：<input type="file" multiple>
+	<br>
+	<!-- 8.输入提示 -->
+	请输入：<input type="text" placeholder="请输入用户名">
+	<br>
+	<!-- 9.提交按钮 ，文字提示就添加value-->
+	<input type="submit">
+	<br>
+	<!-- 10.重置按钮 文字提示就添加value-->
+	<input type="reset">
+	<br>
+	<!-- 11.普通按钮，默认无功能，后面配合js添加功能 -->
+	<input type="button" value="普普通通">
+	<br>
+	<!-- 12.普通双标签按钮，默认无功能，后面配合js添加功能 -->
+	<button>我是按钮</button>
+
+19.表单之下拉菜单(select-->option)
+    <!-- select是下拉菜单的整体，option是选项内容 ,selected是默认选项 -->
+    <select >
+        <option>射手</option>
+        <option>法师</option>
+        <option>战士</option>
+        <option selected>刺客</option>
+    </select>
+
+20.表单之文本域（textarea）
+    <!-- 这是文本域，可以在里面输入各种文字 -->
+	<textarea ></textarea>
+
+21.点击文字图片选中按钮（label）
+	<!--5.用label包裹住需要点击文字就选中按钮的标签就好了，要把生成的for删除  -->
+	<label >
+		我是最厉害的 <input type="radio" name="sex" >
+	</label>
+	<label >
+		我是最帅的<input type="radio" name="sex" >
+	</label>
+
+22.空格符号（&nbsp）
+    <!-- 一个&nbsp;占一个空格，需要几个就放几个 -->
+	大&nbsp;&nbsp;哥
+
+
+23.布局标签（div 、span）
+    说明：div和span都是盒子标签，页面就是由一个个盒子互相嵌套组成的
+    <!-- div独占一行，span不会 -->
+	<div>我是div1</div>
+	<div>我是div2</div>
+	<span>我是span1</span>
+	<span>我是span2</span>
+
+
+
+
